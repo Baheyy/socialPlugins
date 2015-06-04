@@ -33,17 +33,26 @@ class AuthController extends Controller implements AuthenticateUserListener
 	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
 	 * @return void
 	 */
-	public function __construct(Guard $auth, Registrar $registrar)
+	/*public function __construct(Guard $auth, Registrar $registrar)
 	{
 		$this->auth = $auth;
 		$this->registrar = $registrar;
 
 		$this->middleware('guest', ['except' => 'getLogout']);
-	}
+	}*/
 
     public function login(AuthenticateUser $authenticateUser, loginRequest $request)
     {
         return $authenticateUser->execute($request->has('code'), $this);
+    }
+
+    public function fblogin(AuthenticateUser $authenticateUser, loginRequest $request)
+    {
+        /*if(!$request->has('code'))
+        {
+            return Socialite::with('facebook')->redirect();
+        }*/
+        return $authenticateUser->fbexecute($request->has('code'), $this);
     }
 
     public function userHasLoggedIn($user)

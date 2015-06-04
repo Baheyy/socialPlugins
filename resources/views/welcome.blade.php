@@ -43,7 +43,7 @@
 				<div class="title">Cteer</div>
                 <a href="login"> Login with Github </a>
                 <br/>
-                <a href="login"> Login with Facebook </a>
+                <a href="fblogin"> Login with Facebook </a>
 			</div>
 		</div>
 	</body>

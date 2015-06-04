@@ -22,4 +22,6 @@ Route::controllers([
 
 
 
-get('login', 'Auth\AuthController@login');
+Route::get('login', 'Auth\AuthController@login');
+
+Route::get('fblogin', 'Auth\AuthController@fblogin');
